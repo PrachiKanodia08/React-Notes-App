@@ -7,7 +7,7 @@ const HomeNavbar = () => {
       <div className='flex flex-auto px-2' >
         <img className='h-20' src={logo} alt='Notes App'></img>
         <div className='p-3'>
-          <div className='text-4xl font-bold bg-gradient-to-r from-pink-600 via-orange-400 to-purple-600 bg-clip-text text-transparent'>FeatherNote</div>
+          <div className='text-3xl font-bold bg-gradient-to-r from-pink-600 via-orange-400 to-purple-600 bg-clip-text text-transparent'>FeatherNote</div>
           <div className='text-sm text-gray-600'>Never Lose a Great Idea</div>
         </div>
       </div>
