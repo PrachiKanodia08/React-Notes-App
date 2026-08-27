@@ -20,6 +20,8 @@ const CreateAccount = () => {
             [name]: value
         }))
 
+        console.log(createAccountData)
+
     }
 
     const handleRegister = async (e) => {
@@ -39,7 +41,7 @@ const CreateAccount = () => {
                 "http://localhost:5000/api/auth/register",
                 {
                     method: "POST",
-                    header:{
+                    headers:{
                         "Content-Type": "application/json"
                     },
                     body:JSON.stringify({
@@ -73,7 +75,7 @@ const CreateAccount = () => {
     }
 
   return (
-    <form submit={handleRegister}>
+    <form onSubmit={handleRegister}>
         <h2 className="text-2xl font-bold text-pink-500 mb-4">
             Create Account
         </h2>
@@ -82,40 +84,44 @@ const CreateAccount = () => {
             type="text"
             name="fullName"
             placeholder="Full Name"
+            className="w-full border border-gray-400 rounded-lg p-3 mb-4"
             value={createAccountData.fullName}
             onChange={handleChange}
         />
 
         <input
             type="email"
+            name="email"
             placeholder="Email"
-            className="w-full border rounded-lg p-3 mb-4"
+            className="w-full border border-gray-400 rounded-lg p-3 mb-4"
             value={createAccountData.email}
             onChange={handleChange}
         />
 
         <input
             type="password"
+            name="password"
             placeholder="Password"
-            className="w-full border rounded-lg p-3 mb-4"
+            className="w-full border border-gray-400 rounded-lg p-3 mb-4"
             value={createAccountData.password}
             onChange={handleChange}
         />
 
         <input
             type="password"
+            name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full border rounded-lg p-3 mb-4"
+            className="w-full border border-gray-400 rounded-lg p-3 mb-4"
             value={createAccountData.confirmPassword}
             onChange={handleChange}
         />
 
         {error && (
-            <p>{error}</p>
+            <p className="text-red-500 text-sm mb-3">{error}</p>
         )}
 
         {message && (
-            <p>{message}</p>
+            <p className="text-green-600 text-sm mb-3">{message}</p>
         )}
 
         <button 

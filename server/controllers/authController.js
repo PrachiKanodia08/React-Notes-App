@@ -1,12 +1,11 @@
 import bcrypt from "bcrypt"
 import User from "../models/User.js"
+import jwt from "jsonwebtoken"
 
 
 export const registerUser = async (req, res) => {
 
     try{
-
-        console.log("request check: ",req)
 
         const {fullName, email, password} = req.body
 
@@ -58,10 +57,79 @@ export const registerUser = async (req, res) => {
         })
     }
 
+}
 
-    // res.json({
-    //     message: "Register API Working"
-    // })
+export const loginUser = async (req, res) => {
+
+    try {
+
+        const {email, password} = req.body
+        const normalizedEmail = email.trim().toLowerCase()
+
+        //1. check mandatory fields
+        if (!email || !password){
+            return(
+                res.status(400).json({
+                    message:"Email and password are required"
+                })
+            )
+        }
+
+        //2. Find user
+        const userExists = await User.findOne({email:normalizedEmail})
+        if(!userExists){
+            return(
+                res.status(401).json({
+                    message:"Invalid email or password"
+                })
+            )
+        }
+
+        //3. Check is password is correct
+        const isCorrectPassword = await bcrypt.compare(
+            password,
+            userExists.password
+        )
+
+        if(!isCorrectPassword){
+            return(
+                res.status(401).json({
+                    message:"Invalid email or password"
+                })
+            )
+        }
+
+        //4. Generate JWT
+        const token = jwt.sign(
+            {
+                userId: userExists._id,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d"
+            }
+        )
+
+        //4. Login Successfull
+        return(
+            res.status(200).json({
+                message:"Login Successful",
+                token,
+                user:{
+                    id: userExists._id,
+                    fullName: userExists.fullName,
+                    email: userExists.email
+                }
+            })
+        )
+
+    } catch (error) {
+        console.log("Login Error: ", error)
+        res.status(500).json({
+            message: "Something went wrong while logging in"
+        })
+    }
+
 }
 
 
