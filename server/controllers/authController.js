@@ -64,7 +64,7 @@ export const loginUser = async (req, res) => {
     try {
 
         const {email, password} = req.body
-        const normalizedEmail = email.trim().toLowerCase()
+        
 
         //1. check mandatory fields
         if (!email || !password){
@@ -74,6 +74,8 @@ export const loginUser = async (req, res) => {
                 })
             )
         }
+
+        const normalizedEmail = email.trim().toLowerCase()
 
         //2. Find user
         const userExists = await User.findOne({email:normalizedEmail})

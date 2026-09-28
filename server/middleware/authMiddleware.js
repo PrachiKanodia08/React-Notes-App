@@ -1,4 +1,3 @@
-import React from 'react'
 import jwt from "jsonwebtoken";
 
 const authMiddleware = (req, res, next) => {
