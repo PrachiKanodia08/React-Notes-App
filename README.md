@@ -21,3 +21,8 @@ The application is being developed incrementally, starting with the user interfa
 I am currently working on the **authentication flow, protected routes, user specific access, and logout functionality**. The next phase will focus on implementing user-specific notes with **Create, Read, Update, and Delete (CRUD)** operations.
 
 This repository documents my learning journey and progress as I build the application step by step.
+
+
+Sneak peek into the Landing page -
+![alt text](image-1.png)
+
