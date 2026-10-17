@@ -1,4 +1,4 @@
-import React from 'react'
+//import React from 'react'
 import NoteNavbar from './NoteNavbar'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../AuthContext'
@@ -10,6 +10,7 @@ const Notes = () => {
   const {user, token} = useAuth()
 
   const [notes, setNotes] = useState([])
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
   useEffect(() => {
@@ -18,12 +19,15 @@ const Notes = () => {
 
       //const token = localStorage.getItem("token");
       //const {token} = useAuth()
+      setLoading(true)
+      setError("")
 
       try {
 
         const response = await fetch(
-            "http://localhost:5000/api/protected",
+            `${import.meta.env.VITE_API_URL}/api/notes`,
             {
+              method: "GET",
               headers: {
                 Authorization: `Bearer ${token}`,
               }
@@ -36,18 +40,27 @@ const Notes = () => {
             throw new Error(data.message || "Failed to fetch data")
         }
 
-        console.log("data : ",data)
+        setNotes(data.notes || [])
 
-        //setNotes(data)
 
       } catch (error) {
           console.error(error);
-          setError(error.message);
+          setError(error.message || "Unable to load your notes");
+
+      } finally {
+          setLoading(false)
       }
     };
 
+    if (token) {
       fetchNotes();
-  }, []);
+    } else {
+      setNotes([]);
+      setError("Please log in to view your notes.");
+      setLoading(false);
+    }
+
+  }, [token]);
 
   return (
     <>
@@ -67,8 +80,6 @@ const Notes = () => {
               Your notes will appear here.
             </p>
           </div>
-
-          <div>{console.log("notes : ",notes)}</div>
 
         </div>
     </>
