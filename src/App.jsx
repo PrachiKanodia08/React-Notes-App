@@ -9,20 +9,12 @@ import AddNotes from './components/Notes/AddNotes'
 
 const App = () => {
   return (
+    
     <Routes>
       
-      <Route 
-          path="/" 
-          element={<HomePage />} 
-      />
+      <Route path="/" element={<HomePage />} />
 
-      <Route 
-        path="/notes" 
-        element={
-          <ProtectedRoute>
-            <MainLayout />
-          </ProtectedRoute>} 
-      >
+      <Route path="/notes" element={<ProtectedRoute> <MainLayout /> </ProtectedRoute>} >
 
           <Route 
             path="/notes/dashboard" 
@@ -41,8 +33,6 @@ const App = () => {
           />
 
       </Route>
-              
-      {/* <MainLayout /> */}
 
     </Routes>
     
