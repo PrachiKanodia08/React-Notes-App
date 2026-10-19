@@ -1,5 +1,5 @@
 //import React from 'react'
-import NoteNavbar from './NoteNavbar'
+import NoteNavbar from '../../layout/NoteNavbar.jsx'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../AuthContext'
 import { Link } from 'react-router-dom'

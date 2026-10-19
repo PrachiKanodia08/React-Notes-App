@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../../assets/Notes_Logo.png'
+import logo from '../assets/Notes_Logo.png'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../AuthContext'
+import { useAuth } from '../components/AuthContext'
 
 
 const NoteNavbar = () => {

@@ -1,13 +1,13 @@
 import React from 'react'
-import Navbar from '../components/LandingPage/Navbar'
+import NoteNavbar from '../layout/NoteNavbar.jsx'
 import { Outlet } from 'react-router-dom'
 
 const MainLayout = () => {
 
   return (
     <>
-    <Navbar />
-    <Outlet />
+      <NoteNavbar />
+      <Outlet />
     </>
   )
 }
