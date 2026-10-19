@@ -67,7 +67,7 @@ const LoginAccount = () => {
         login(data.token, data.user)
         
         // Redirect to Notes Dashboard
-        navigate(`/notes`)
+        navigate(`/notes/dashboard`)
 
       } catch (error) {
 

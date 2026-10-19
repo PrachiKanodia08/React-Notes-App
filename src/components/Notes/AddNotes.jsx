@@ -5,9 +5,8 @@ import NoteNavbar from "../../layout/NoteNavbar"
 const AddNotes = () => {
   return (
     <>
-        <NoteNavbar />
         <div>AddNotes</div>
-        <Link to="/notes" >Back to Dashboard</Link>
+        <Link to="/notes/dashboard" >Back to Dashboard</Link>
     </>
     
   )

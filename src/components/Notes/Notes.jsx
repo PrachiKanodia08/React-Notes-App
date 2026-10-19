@@ -66,7 +66,6 @@ const Notes = () => {
 
   return (
     <>
-      <NoteNavbar />
 
       <div className="min-h-screen bg-purple-50 p-6 md:p-10">
         <div className="mb-8">
@@ -110,7 +109,7 @@ const Notes = () => {
               </p>
 
               <Link
-                to="/add-notes"
+                to="/notes/add-notes"
                 className="mt-5 inline-block rounded-lg
                           bg-gradient-to-r from-pink-500 to-purple-600
                           px-5 py-3 font-medium text-white"

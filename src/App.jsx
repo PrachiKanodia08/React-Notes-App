@@ -17,20 +17,30 @@ const App = () => {
       />
 
       <Route 
-          path="/notes" 
-          element={
-              <ProtectedRoute>
-                <Notes />
-              </ProtectedRoute>} 
-      />
+        path="/notes" 
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>} 
+      >
 
-      <Route 
-          path="/add-notes" 
-          element={
-              <ProtectedRoute>
-                <AddNotes />
-              </ProtectedRoute>} 
-      />
+          <Route 
+            path="/notes/dashboard" 
+            element={
+                <ProtectedRoute>
+                  <Notes />
+                </ProtectedRoute>} 
+          />
+
+          <Route 
+            path="/notes/add-notes" 
+            element={
+                <ProtectedRoute>
+                  <AddNotes />
+                </ProtectedRoute>} 
+          />
+
+      </Route>
               
       {/* <MainLayout /> */}
 

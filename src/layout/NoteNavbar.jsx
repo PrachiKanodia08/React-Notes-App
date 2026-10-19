@@ -29,8 +29,8 @@ const NoteNavbar = () => {
 
           {/* RIGHT: Menu Items */}
           <div className="flex items-center text-white">
-            <NavLink className="px-3" to="/notes">Notes</NavLink>
-            <NavLink className="px-3" to="/add-notes">Add Notes</NavLink>
+            <NavLink className="px-3" to="/notes/dashboard">Notes</NavLink>
+            <NavLink className="px-3" to="/notes/add-notes">Add Notes</NavLink>
             {/* <NavLink className="px-3" to="#" onClick={handleLogout} >Logout</NavLink> */}
             <button
               onClick={handleLogout}
