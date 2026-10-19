@@ -4,6 +4,7 @@ import MainLayout from './layout/MainLayout'
 import HomePage from './components/HomePage/HomePage'
 import Notes from './components/Notes/Notes'
 import ProtectedRoute from './components/ProtectedRoute'
+import AddNotes from './components/Notes/AddNotes'
 
 
 const App = () => {
@@ -20,6 +21,14 @@ const App = () => {
           element={
               <ProtectedRoute>
                 <Notes />
+              </ProtectedRoute>} 
+      />
+
+      <Route 
+          path="/add-notes" 
+          element={
+              <ProtectedRoute>
+                <AddNotes />
               </ProtectedRoute>} 
       />
               
