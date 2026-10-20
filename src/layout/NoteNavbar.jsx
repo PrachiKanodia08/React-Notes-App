@@ -28,13 +28,13 @@ const NoteNavbar = () => {
           </div>
 
           {/* RIGHT: Menu Items */}
-          <div className="flex items-center text-white">
-            <NavLink className="px-3" to="/notes/dashboard">Notes</NavLink>
-            <NavLink className="px-3" to="/notes/add-notes">Add Notes</NavLink>
+          <div className="flex gap-3 items-center text-white">
+            <NavLink className="px-3 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition" to="/notes/dashboard">Notes</NavLink>
+            <NavLink className="px-3 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition" to="/notes/add-notes">Add Notes</NavLink>
             {/* <NavLink className="px-3" to="#" onClick={handleLogout} >Logout</NavLink> */}
             <button
               onClick={handleLogout}
-              className="px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition"
+              className="px-3 py-2 rounded-lg bg-white/20 hover:bg-white/30 transition"
             >
               Logout
             </button>

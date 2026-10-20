@@ -1,18 +1,46 @@
-//import React from 'react'
-import NoteNavbar from '../../layout/NoteNavbar.jsx'
 import { useState, useEffect } from 'react'
 import { useAuth } from '../AuthContext'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 
 const Notes = () => {
 
   //const user = JSON.parse(localStorage.getItem("user"))
   const {user, token} = useAuth()
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const [toastMessage, setToastMessage] = useState(location.state?.message || "")
+  //const successMessage = location.state?.message
 
   const [notes, setNotes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+
+
+  useEffect (() => {
+
+    if(!toastMessage) return
+
+    const timer = setTimeout(()=>{
+      setToastMessage("")
+    }, 5000)
+
+    return () => clearTimeout(timer)
+
+  }, [toastMessage] )
+
+
+  const closeToast = () => {
+
+    setToastMessage("")
+    navigate(location.pathname,{
+      replace: true,
+      state: null
+    })
+
+  }
+
 
   useEffect(() => {
 
@@ -69,6 +97,38 @@ const Notes = () => {
 
       <div className="min-h-screen bg-purple-50 p-6 md:p-10">
         <div className="mb-8">
+
+          {toastMessage && (
+            <div
+              role="status"
+              className="fixed right-5 top-5 z-50 flex w-[calc(100%-2.5rem)]
+                        max-w-sm items-start gap-3 rounded-xl
+                        border border-green-200 bg-white p-4 pr-10
+                        text-green-800 shadow-lg"
+            >
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center
+                              justify-center rounded-full bg-green-100
+                              text-sm font-bold text-green-700">
+                ✓
+              </span>
+
+              <p className="flex-1 pt-0.5 text-sm font-medium">
+                {toastMessage}
+              </p>
+
+              <button
+                type="button"
+                onClick={closeToast}
+                aria-label="Dismiss notification"
+                className="absolute right-2 top-2 rounded-md p-1
+                          text-gray-400 transition hover:bg-gray-100
+                          hover:text-gray-700"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          )}          
+
           <h1 className="text-3xl font-bold text-purple-800">
             My Notes
           </h1>
@@ -76,9 +136,29 @@ const Notes = () => {
           <p className="mt-2 text-gray-600">
             Welcome, {user?.fullName || "User"}! Here are your notes.
           </p>
+
+          {/* {successMessage && (
+            <p
+              role="status"
+              className="mb-5 rounded-lg border border-green-200
+                        bg-green-50 p-3 text-green-700 max-w-sm max-w-md max-w-lg"
+            >
+              {successMessage}
+            </p>
+          )} */}
+          
         </div>
         <div className="mx-auto max-w-3xl">
 
+          {/* {successMessage && (
+            <p
+              role="status"
+              className="mb-5 rounded-lg border border-green-200
+                        bg-green-50 p-3 text-green-700"
+            >
+              {successMessage}
+            </p>
+          )} */}
 
           {loading && (
             <p className="py-10 text-center text-purple-700">
