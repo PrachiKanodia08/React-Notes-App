@@ -69,6 +69,48 @@ export const getNotes = async (req, res) => {
 }
 
 
+// Get Notes by id
+export const getNoteById = async (req, res) => {
+
+    try {
+
+        if (!mongoose.isValidObjectId(req.params.id)){
+            return (
+                res.status(400).json({
+                    message: "Invalid note id"
+                })
+            )
+        }
+
+        const note = await Note.findOne({
+            userId: req.user,
+            _id: req.params.id
+        })
+
+        if(!note){
+            return(
+                res.status(404).json({
+                    message: "Note not found"
+                })
+            )
+        }
+
+        return (
+            res.status(200).json({note})
+        )
+        
+    } catch (error) {
+        console.error("Error in finding note: ", error)
+        return (
+            res.status(500).json({
+            message: "Failed to fetch note"
+        })
+        )
+    }
+
+}
+
+
 // Update Note
 export const updateNote = async (req, res) => {
     

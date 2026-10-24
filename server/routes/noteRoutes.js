@@ -1,5 +1,5 @@
 import express from "express"
-import { createNote, getNotes, updateNote, deleteNote } from "../controllers/noteController.js"
+import { createNote, getNotes, updateNote, deleteNote, getNoteById } from "../controllers/noteController.js"
 import authMiddleware from "../middleware/authMiddleware.js"
 
 
@@ -13,6 +13,9 @@ router.post("/", createNote)
 
 // Get note
 router.get("/", getNotes)
+
+// Get note by id
+router.get("/:id", getNoteById)
 
 // Update note
 router.put("/:id", updateNote)

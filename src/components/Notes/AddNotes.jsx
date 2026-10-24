@@ -48,9 +48,6 @@ const AddNotes = () => {
 
         setIsLoading(true)
 
-        console.log("title: ", title)
-        console.log("content: ", content)
-
         try {
             
             const response = await fetch (

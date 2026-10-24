@@ -136,29 +136,9 @@ const Notes = () => {
           <p className="mt-2 text-gray-600">
             Welcome, {user?.fullName || "User"}! Here are your notes.
           </p>
-
-          {/* {successMessage && (
-            <p
-              role="status"
-              className="mb-5 rounded-lg border border-green-200
-                        bg-green-50 p-3 text-green-700 max-w-sm max-w-md max-w-lg"
-            >
-              {successMessage}
-            </p>
-          )} */}
           
         </div>
         <div className="mx-auto max-w-3xl">
-
-          {/* {successMessage && (
-            <p
-              role="status"
-              className="mb-5 rounded-lg border border-green-200
-                        bg-green-50 p-3 text-green-700"
-            >
-              {successMessage}
-            </p>
-          )} */}
 
           {loading && (
             <p className="py-10 text-center text-purple-700">
@@ -204,13 +184,25 @@ const Notes = () => {
 
         {!loading && !error && notes.length > 0 && (
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {notes.map((note) => (
+              {notes.map((note) => (              
                 <article
                   key={note._id}
-                  className="rounded-2xl border border-purple-100
-                            bg-white p-5 shadow-md transition
+                  className="relative rounded-2xl border border-purple-100
+                            bg-white p-5 pt-14 shadow-md transition
                             hover:-translate-y-1 hover:shadow-md"
                 >
+                  
+                  {/* Edit button in the top-right corner */}
+                  <button
+                    type="button"
+                    onClick={() => navigate(`/notes/edit-notes/${note._id}`)}
+                    className="absolute right-4 top-2 mt-2 rounded-lg border border-purple-200
+                              px-3 py-2 text-sm font-medium text-purple-700
+                              transition hover:bg-purple-50"
+                  >
+                    ✎ Edit
+                  </button>
+
                   <h2 className="break-words text-lg font-semibold text-purple-800">
                     {note.title}
                   </h2>

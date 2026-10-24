@@ -5,6 +5,7 @@ import HomePage from './components/HomePage/HomePage'
 import Notes from './components/Notes/Notes'
 import ProtectedRoute from './components/ProtectedRoute'
 import AddNotes from './components/Notes/AddNotes'
+import EditNotes from './components/Notes/EditNotes'
 
 
 const App = () => {
@@ -29,6 +30,14 @@ const App = () => {
             element={
                 <ProtectedRoute>
                   <AddNotes />
+                </ProtectedRoute>} 
+          />
+
+          <Route 
+            path="/notes/edit-notes/:id" 
+            element={
+                <ProtectedRoute>
+                  <EditNotes />
                 </ProtectedRoute>} 
           />
 
