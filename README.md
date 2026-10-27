@@ -23,6 +23,16 @@ I am currently working on the **authentication flow, protected routes, user spec
 This repository documents my learning journey and progress as I build the application step by step.
 
 
-Sneak peek into the Landing page -
+Sneak peek into: 
+
+Landing page -
 ![alt text](image-1.png)
 
+Login Popup - 
+![alt text](image-2.png)
+
+Create Account - 
+![alt text](image-3.png)
+
+Dashboard with Notes added - 
+![alt text](image-4.png)
