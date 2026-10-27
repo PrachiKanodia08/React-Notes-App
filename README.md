@@ -25,7 +25,7 @@ This repository documents my learning journey and progress as I build the applic
 
 Sneak peek into: 
 
-Landing page -
+Landing Page -
 ![alt text](image-1.png)
 
 Login Popup - 
@@ -35,7 +35,7 @@ Create Account Popup -
 ![alt text](image-3.png)
 
 Dashboard with Notes added - 
-![alt text](image-4.png)
+![alt text](image-7.png)
 
-Create notes page - 
-![alt text](image-5.png)
+Create Notes Page - 
+![alt text](image-6.png)
