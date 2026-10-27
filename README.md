@@ -31,8 +31,11 @@ Landing page -
 Login Popup - 
 ![alt text](image-2.png)
 
-Create Account - 
+Create Account Popup - 
 ![alt text](image-3.png)
 
 Dashboard with Notes added - 
 ![alt text](image-4.png)
+
+Create notes page - 
+![alt text](image-5.png)
