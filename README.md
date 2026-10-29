@@ -34,8 +34,11 @@ Login Popup -
 Create Account Popup - 
 ![alt text](image-3.png)
 
-Dashboard with Notes added - 
+Dashboard Display Notes - 
 ![alt text](image-7.png)
 
 Create Notes Page - 
 ![alt text](image-6.png)
+
+Edit/Update Notes Page - prefilled data appears
+![alt text](image-8.png)
