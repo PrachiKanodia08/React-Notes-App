@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../AuthContext'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import DeleteNotes from './DeleteNotes'
 
 
 const Notes = () => {
@@ -16,6 +17,9 @@ const Notes = () => {
   const [notes, setNotes] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+
+  //Delete note
+  const [NoteToDelete, setNoteToDelete] = useState(null)
 
 
   useEffect (() => {
@@ -193,7 +197,7 @@ const Notes = () => {
                 >
                   
                   {/* Edit button in the top-right corner */}
-                  <button
+                  {/* <button
                     type="button"
                     onClick={() => navigate(`/notes/edit-notes/${note._id}`)}
                     className="absolute right-4 top-2 mt-2 rounded-lg border border-purple-200
@@ -201,7 +205,31 @@ const Notes = () => {
                               transition hover:bg-purple-50"
                   >
                     ✎ Edit
-                  </button>
+                  </button> */}
+
+                  <div className="absolute right-4 top-4 flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/notes/edit-notes/${note._id}`)}
+                      aria-label={`Edit ${note.title}`}
+                      className="rounded-lg border border-purple-200
+                                px-3 py-1.5 text-sm font-medium
+                                text-purple-700 transition hover:bg-purple-50"
+                    >
+                      ✎ Edit
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setNoteToDelete(note)}
+                      aria-label={`Delete ${note.title}`}
+                      className="rounded-lg border border-red-200
+                                px-3 py-1.5 text-sm font-medium
+                                text-red-600 transition hover:bg-red-50"
+                    >
+                      Delete
+                    </button>
+                  </div>                  
 
                   <h2 className="break-words text-lg font-semibold text-purple-800">
                     {note.title}
@@ -222,7 +250,16 @@ const Notes = () => {
                 </article>
               ))}
             </div>
-          )}
+        )}
+
+
+        {NoteToDelete && (
+            <DeleteNotes 
+              deleteDetail = {NoteToDelete} 
+              onClose = {() => setNoteToDelete(null) }
+              />
+        )}
+
 
       </div>
 

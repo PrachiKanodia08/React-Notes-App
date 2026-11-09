@@ -15,10 +15,12 @@ The application is being developed incrementally, starting with the user interfa
 * User authentication with JWT
 * Protected routes and post-login navigation
 * Dashboard/Home page after successful login
+* Authentication flow, protected routes, user specific access
+* Logout functionality
 
 ### Current Focus
 
-I am currently working on the **authentication flow, protected routes, user specific access, and logout functionality**. The next phase will focus on implementing user-specific notes with **Create, Read, Update, and Delete (CRUD)** operations.
+I am currently working on implementing user-specific notes with **Create, Read, Update, and Delete (CRUD)** operations.
 
 This repository documents my learning journey and progress as I build the application step by step.
 
@@ -34,7 +36,7 @@ Login Popup -
 Create Account Popup - 
 ![alt text](image-3.png)
 
-Dashboard Display Notes - 
+Dashboard Displays/Reads Notes - 
 ![alt text](image-7.png)
 
 Create Notes Page - 
