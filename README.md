@@ -22,7 +22,7 @@ The application is being developed incrementally, starting with the user interfa
 ## Development Approach
 
 * Following a step-by-step development approach, implementing and testing individual features.
-* Leveraging Generative AI tools (ChatGPT, Claude and Gemini) through structured prompt engineering to plan development activities, break down requirements into manageable tasks, accelerate learning, understand technical concepts, support testing and debugging, and resolve development issues.
+* Leveraging Generative AI tools (ChatGPT, Claude and Gemini) through structured prompt engineering to plan development activities, break down requirements into manageable tasks, assist with UI design and styling, accelerate learning, understand technical concepts, support testing and debugging, and resolve development issues.
 * Focusing on hands-on implementation to strengthen practical development skills.
 
 
