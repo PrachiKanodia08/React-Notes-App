@@ -3,7 +3,7 @@
 **Work in Progress**
 
 
-# Notes Application
+## Notes Application
 
 A full-stack Notes Application built as a learning project to strengthen my skills in **React, Tailwind CSS, Node.js, Express.js, and MongoDB**.
 
@@ -19,13 +19,14 @@ The application is being developed incrementally, starting with the user interfa
 * Logout functionality
 * User-specific notes management (CRUD operations) – in progress
 
-# Development Approach
+## Development Approach
 
 * Following a step-by-step development approach, implementing and testing individual features.
-* Using ChatGPT and AI tools for planning, breaking down tasks, understanding concepts, learning new technologies, testing, debugging, and issue resolution.
+* Leveraging Generative AI tools (ChatGPT, Claude and Gemini) through structured prompt engineering to plan development activities, break down requirements into manageable tasks, accelerate learning, understand technical concepts, support testing and debugging, and resolve development issues.
 * Focusing on hands-on implementation to strengthen practical development skills.
 
-### Current Focus
+
+## Current Focus
 
 I am currently working on implementing user-specific notes with **Create, Read, Update, and Delete (CRUD)** operations.
 
