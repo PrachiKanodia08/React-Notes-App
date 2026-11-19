@@ -17,6 +17,13 @@ The application is being developed incrementally, starting with the user interfa
 * Dashboard/Home page after successful login
 * Authentication flow, protected routes, user specific access
 * Logout functionality
+* User-specific notes management (CRUD operations) – in progress
+
+# Development Approach
+
+* Following a step-by-step development approach, implementing and testing individual features.
+* Using ChatGPT and AI tools for planning, breaking down tasks, understanding concepts, learning new technologies, testing, debugging, and issue resolution.
+* Focusing on hands-on implementation to strengthen practical development skills.
 
 ### Current Focus
 

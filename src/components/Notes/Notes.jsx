@@ -259,6 +259,7 @@ const Notes = () => {
               onClose = {() => setNoteToDelete(null) }
               />
         )}
+        <>{console.log("NoteToDelete",NoteToDelete)}</>
 
 
       </div>
